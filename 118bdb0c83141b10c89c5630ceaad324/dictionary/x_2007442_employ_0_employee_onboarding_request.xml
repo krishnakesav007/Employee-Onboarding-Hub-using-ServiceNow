@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="3a5dd70083541b10c89c5630ceaad3b3" label="Employee Onboarding Request" max_length="40" name="x_2007442_employ_0_employee_onboarding_request" type="collection">
+        <element display="true" label="Reporting Manager" mandatory="true" max_length="32" name="reporting_manager" reference="sys_user" type="reference"/>
+        <element label="Job Titile" max_length="100" name="job_titile" type="string"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="completed" sequence="40" value="4"/>
+                <element inactive_on_update="false" label="cancelled" sequence="50" value="7"/>
+                <element inactive_on_update="false" label="draft" sequence="10" value="1"/>
+                <element inactive_on_update="false" label="in progress" sequence="30" value="3"/>
+                <element inactive_on_update="false" label="submitted" sequence="20" value="2"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" read_only_option="strict_read_only" type="string"/>
+        <element label="Special Notes" max_length="10000" name="special_notes" type="string"/>
+        <element label="Joining Date" mandatory="true" max_length="40" name="joining_date" type="glide_date"/>
+        <element label="HR Coordinator" max_length="32" name="hr_coordinator" reference="sys_user" type="reference"/>
+        <element label="Employee Name" mandatory="true" max_length="100" name="employee_name" type="string"/>
+        <element default="0" label="Progress Percentage" max_length="40" name="progress_percentage" type="integer"/>
+        <element choice="1" label="Stage" max_length="40" name="stage" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Day one" sequence="20" value="day_one"/>
+                <element inactive_on_update="false" label="Post Joining" sequence="30" value="post_joining"/>
+                <element inactive_on_update="false" label="Pre Joining" sequence="10" value="pre_joining"/>
+                <element inactive_on_update="false" label="Completed" sequence="40" value="completed"/>
+            </choice>
+        </element>
+        <element label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Employee Email" mandatory="true" max_length="60" name="employee_email" type="string"/>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="hr_coordinator"/>
+        </index>
+        <index name="index3">
+            <element name="reporting_manager"/>
+        </index>
+    </element>
+</database>

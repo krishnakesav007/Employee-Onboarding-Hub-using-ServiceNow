@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="a3cd5410835c1b10c89c5630ceaad316" extends="task" label="Onboarding Task" max_length="40" name="x_2007442_employ_0_onboarding_task" type="collection">
+        <element default="true" label="Is Mandatory" max_length="40" name="is_mandatory" type="boolean"/>
+        <element label="Onboarding Request" mandatory="true" max_length="32" name="onboarding_request" reference="x_2007442_employ_0_employee_onboarding_request" type="reference"/>
+        <element choice="1" label="Task Category" max_length="40" name="task_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Facilities" sequence="30" value="facilities"/>
+                <element inactive_on_update="false" label="IT" sequence="20" value="it"/>
+                <element inactive_on_update="false" label="Manager" sequence="50" value="manager"/>
+                <element inactive_on_update="false" label="Employee" sequence="60" value="employee"/>
+                <element inactive_on_update="false" label="Finance" sequence="40" value="finance"/>
+                <element inactive_on_update="false" label="HR" sequence="10" value="hr"/>
+            </choice>
+        </element>
+        <element choice="1" label="Stage" max_length="40" name="stage" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pre Joining" sequence="10" value="pre_joining"/>
+                <element inactive_on_update="false" label="Day One" sequence="20" value="day_one"/>
+                <element inactive_on_update="false" label="Post Joining" sequence="30" value="post_joining"/>
+            </choice>
+        </element>
+        <element default="0" label="Days Offset" max_length="40" name="days_offset" type="integer"/>
+    </element>
+</database>
