@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="6f5aad498314df10c89c5630ceaad3af" label="Onboarding Checklist Template" max_length="40" name="x_2007442_employ_0_onboarding_checklist_template" type="collection">
+        <element label="Task name" mandatory="true" max_length="100" name="task_name" type="string"/>
+        <element label="Instructions" max_length="8000" name="instructions" type="html"/>
+        <element label="Responsible Group" max_length="32" name="responsible_group" reference="sys_user_group" type="reference"/>
+        <element choice="1" label="Task category" max_length="40" name="task_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Employee" sequence="60" value="employee"/>
+                <element inactive_on_update="false" label="HR" sequence="10" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="30" value="facilities"/>
+                <element inactive_on_update="false" label="IT" sequence="20" value="it"/>
+                <element inactive_on_update="false" label="Finance" sequence="40" value="finance"/>
+                <element inactive_on_update="false" label="Manager" sequence="50" value="manager"/>
+            </choice>
+        </element>
+        <element label="Days_Offset" max_length="40" name="days_offset" type="integer"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element choice="1" label="Stage" max_length="40" name="stage" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pre Joining" sequence="10" value="pre_joining"/>
+                <element inactive_on_update="false" label="Day One" sequence="20" value="day_one"/>
+                <element inactive_on_update="false" label="Post Joining" sequence="30" value="post_joining"/>
+            </choice>
+        </element>
+        <element default="true" label="IS Mandatary " max_length="40" name="is_mandatary" type="boolean"/>
+        <index name="index">
+            <element name="responsible_group"/>
+        </index>
+    </element>
+</database>
